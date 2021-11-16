@@ -22,7 +22,7 @@ const TaskList = (props) => {
     />)
 
     return (
-        <div className="container">
+        <div className="container mb-4">
             <div className="row m-4 m-lg-0 gx-4 gy-4">
                 <div className="col-md-7">
                     <div className="card">
