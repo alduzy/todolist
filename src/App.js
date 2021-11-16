@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddTask from './AddTask';
 import TaskList from './Tasklist';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
@@ -51,17 +52,14 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <div className="App">
-          <h1>ToDoApp</h1>
-          <AddTask add={this.addTask} />
-          <TaskList
-            tasks={this.state.tasks}
-            done={this.handleDone}
-            remove={this.handleRemove}
-          />
-        </div>
-      </>
+      <div>
+        <AddTask add={this.addTask} />
+        <TaskList
+          tasks={this.state.tasks}
+          done={this.handleDone}
+          remove={this.handleRemove}
+        />
+      </div>
     );
   }
 }

@@ -22,18 +22,31 @@ const TaskList = (props) => {
     />)
 
     return (
-        <>
-            <div className="active">
-                <h1>Remaining tasks: {active.length > 0 && active.length}</h1>
-                {activeTasks.length > 0 ? activeTasks : <p>No tasks for now!</p>}
-            </div>
-            <hr />
-            <div className="inactive">
-                <h2>Completed tasks: {done.length}</h2>
-                {doneTasks.slice(0, 5)}
-                {done.length > 5 && <p>and {done.length - 5} more</p>}
-            </div>
-        </>
+        <div className="container">
+            <div className="row m-4 m-lg-0 gx-4 gy-4">
+                <div className="col-md-7">
+                    <div className="card">
+                        <div className="card-header">
+                            <h2 className="card-title display-6">Remaining tasks: {active.length ? active.length : "None!"}</h2>
+                        </div>
+                        <ul className="list-group list-group-flush">
+                            {activeTasks}
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-md-5">
+                    <div className="card">
+                        <div className="card-header">
+                            <h2 className="card-title display-6">Completed: {done.length}</h2>
+                        </div>
+                        <ul className="list-group list-group-flush">
+                            {doneTasks.slice(0, 7)}
+                        </ul>
+                        {done.length > 7 && <div className="card-footer"><h5 className="text-center">...and {done.length - 5} more</h5></div>}
+                    </div>
+                </div>
+            </div >
+        </div>
     );
 }
 
